@@ -1,0 +1,17 @@
+{
+  "name": "hyper-map",
+  "repo": "hypergroup/hyper-map",
+  "description": "hyper-path traversals with a ES6 Map style interface",
+  "version": "0.1.0",
+  "keywords": [],
+  "dependencies": {
+    "component/emitter": "^1.1.3",
+    "visionmedia/debug": "^2.0.0",
+    "hypergroup/hyper-path": "^1.0.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
