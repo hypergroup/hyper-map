@@ -64,7 +64,7 @@ HyperMap.prototype.get = function(path, scope, delim) {
  *
  * @param {String} href
  * @param {Object} value
- * @return {SyncClient}
+ * @return {HyperMap}
  * @api public
  */
 
@@ -80,7 +80,7 @@ HyperMap.prototype.set = function(href, value) {
  *
  * @param {String} href
  * @param {Error} err
- * @return {SyncClient}
+ * @return {HyperMap}
  * @api public
  */
 
@@ -95,7 +95,7 @@ HyperMap.prototype.error = function(href, err) {
  * Remove a resource from the store
  *
  * @param {String} href
- * @return {SyncClient}
+ * @return {HyperMap}
  * @api public
  */
 
@@ -109,7 +109,8 @@ HyperMap.prototype.delete = function(href) {
 
 function createClient(map) {
   var client = {
-    completed: true
+    completed: true,
+    requests: []
   };
   client.root = root;
   client.get = get;
@@ -122,10 +123,11 @@ function createClient(map) {
 
   function get(href, cb) {
     map.emit('request', href);
+    client.requests.push(href);
     client.completed = client.completed && !!map._completed[href];
     var err = map._errors[href] || void 0;
     var val = map._resources[href];
     debug('fetching cache for ' + href, err, val);
-    return cb(err, val);
+    return cb(err, val, null, null, false);
   }
 }
