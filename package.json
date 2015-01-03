@@ -1,6 +1,6 @@
 {
   "name": "hyper-map",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "hyper-path traversals with a ES6 Map style interface",
   "main": "index.js",
   "scripts": {

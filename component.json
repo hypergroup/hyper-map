@@ -2,7 +2,7 @@
   "name": "hyper-map",
   "repo": "hypergroup/hyper-map",
   "description": "hyper-path traversals with a ES6 Map style interface",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [],
   "dependencies": {
     "component/emitter": "^1.1.3",
